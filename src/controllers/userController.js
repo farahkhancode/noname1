@@ -29,6 +29,7 @@ module.exports = {
 //#1
     let newUser = {
       email: req.body.email,
+      locationId:req.body.locationId,
       password: req.body.password,
       passwordConfirmation: req.body.passwordConfirmation
     };

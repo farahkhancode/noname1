@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
          isEmail: { msg: "must be a valid email" }
        }
      },
+     locationId: {
+        type: DataTypes.INTEGER,
+      },
 
      password: {
        type: DataTypes.STRING,
@@ -18,10 +21,9 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {});
   User.associate = function(models) {
-    User.hasOne(models.Profile, {
-      foreignKey: "userId",
-      as: "profiles"
-    });
+    User.belongsTo(models.Location, {
+    foreignKey: "locationId",
+  });
     // associations can be defined here
   };
   return User;

@@ -4,9 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Location.associate = function(models) {
-    Location.hasMany(models.Profile, {
+    Location.hasMany(models.User, {
          foreignKey: "locationId",
-         as: "profiles"
+         as: "users"
        });
     // associations can be defined here
   };

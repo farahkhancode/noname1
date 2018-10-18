@@ -30,7 +30,6 @@ create(req, res, next){
      let newLocation = {
        name: req.body.name
      };
-
      locationQueries.addLocation(newLocation, (err, location) => {
        if(err){
          res.redirect(500, "/locations/new");
@@ -39,6 +38,7 @@ create(req, res, next){
        }
      });
    },
+   
    show(req, res, next){
 
 //#1
