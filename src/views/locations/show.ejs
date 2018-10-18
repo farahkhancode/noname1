@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+      <h1><%= location.id %></h1>
+      <form style="display:initial" action="/locations/<%= location.id %>/destroy" method="post">
+       <button type="submit" class="btn btn-danger">Delete</button>
+     </form>
+     <h1>Profiles</h1>
+
+  <ul class="list-group">
+    <% location.profiles.forEach((profile) => { %>
+      <li class="list-group-item">
+        <a href="/locations/<%= location.id %>/profiles/<%= profile.id %>"> <%= profile.id %> </a>
+      </li>
+    <% }) %>
+  </ul>
+    </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
+
+  </body>
+</html>

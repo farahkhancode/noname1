@@ -5,6 +5,7 @@ module.exports = {
   register(req, res, next){
     res.render("users/register");
   },
+
   signInForm(req, res, next){
     res.render("users/signin");
   },
@@ -35,7 +36,7 @@ module.exports = {
     userQueries.createUser(newUser, (err, user) => {
       if(err){
         req.flash("error", err);
-        res.redirect("/users/sign_up");
+        res.redirect("/users/register");
       } else {
 
 // #3
